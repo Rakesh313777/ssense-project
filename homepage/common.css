@@ -20,6 +20,7 @@ span{
 #container{
     width: 95%;
     margin: auto;
+    margin-top: 80px;
 }
 p{
     color: rgb(71, 71, 71);
@@ -121,9 +122,7 @@ button{
     margin-bottom: -900px;
     margin-top:40px;
 }
-#main>div{
-    /* border: 1px solid; */
-}
+
 .c1{
     display: flex;
 }
@@ -131,9 +130,7 @@ button{
     height: 280px;
     margin-left: 50px;
 }
-.c1>div{
-    /* border: 5px solid; */
-}
+
 #c2>img{
     width: 100%;
     height: 300px;
@@ -160,9 +157,7 @@ button{
     grid-template-rows:350px 600px 600px;
     justify-content: space-between;
 }
-#main>div{
-    /* border: 1px solid; */
-}
+
 .c1{
     display: flex;
 }
@@ -171,9 +166,7 @@ button{
     height: 270px;
     margin-left: 50px;
 }
-.c1>div{
-    /* border: 5px solid; */
-}
+
 #c2>img{
     width: 100%;
     height: 300px;
@@ -195,9 +188,7 @@ button{
     height: 150px;
     margin-left: -30px;
 }
-#tt div{
-    /* margin-top: -10px; */
-}
+
 #c3>div{
     width: 50%;
 }
@@ -329,51 +320,44 @@ button{
 .b>p{
     margin-bottom: -20px;
 }
-.container{
-    width: 100%;
-    height: 60px;
-    /* border: 2px solid red; */
-    box-shadow: 0px 0px 0px 0px #aaaaaa;
-    position: fixed;
-    text-align: center;
-    position: fixed;
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
     margin: auto;
-    background-color: white;
-
+    position: fixed;
+    margin-top: -70px;
+    color: grey;
+    margin-left: 30px;
    
 }
-img{
-    width: 70%;
-    height: 30px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    margin-top: -5px;
-}
-.container ul li a{
-    text-decoration: none;
-    color: black;
-  
-  
-}
-.container ul li a:hover{
-    text-decoration: underline;
-    color: black;
+
+.container>div{
+    display: flex;
+
+    gap: 30px;
+
 
 }
-.container ul li{
-    float: left;  
-    text-align: center;
-    list-style: none;
-    padding-left: 43px;
+
+.ssense{
+    margin-top: 20px;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: black;
+    font-weight: bold;
+
+} 
+a{
+    text-decoration: none;
+    color: black;
 }
-#m img{
-    height: 600px;
-    width: 50%;
+
+a:hover{
+    text-decoration:underline;
 }
-body{
-   margin-top: 0px; 
-   padding: 0px;
-}
+
+
 #downtext {
     display: flex;
     width: 80%;
@@ -398,8 +382,4 @@ body{
     margin-top: -100px;
     font-size: 10px;
     color: grey;
-}
-a {
-    text-decoration: none;
-    color: black;
 }

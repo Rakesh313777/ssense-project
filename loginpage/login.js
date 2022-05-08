@@ -15,6 +15,7 @@ function myfunction(){
     {
         alert("login sucessfull")
         localStorage.setItem("signupdata",JSON.stringify(signupdata))
+        window.location.href="./mens,womens/mens.html"
     }
     else
     {
