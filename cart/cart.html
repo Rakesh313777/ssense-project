@@ -1,0 +1,119 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+    
+       .container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    position: fixed;
+    margin-top: 0px;
+    color: grey;
+    margin-left: 30px;
+}
+
+.container>div{
+    display: flex;
+
+    gap: 30px;
+
+
+}
+
+.ssense{
+    margin-top: 20px;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: black;
+    font-weight: bold;
+
+} 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+    
+    </style>
+</head>
+
+<body>
+   
+
+    <div id="products"></div>
+    <div class="container">
+        <div>
+            <P><a href="Home.html">HOME</a></P>
+            <p><a href="mens.html">MENSWEAR</a></p>
+            <p><a href="womens.html">WOMENSWEAR</a></p>
+            
+        </div> 
+          <div class="ssense"><a href="home.html">SSENSE</a></div>
+        <div>
+            <p><a href="signup.html">ACCOUNT</a></p>
+            <p><a href="payment.html">PAYMENT</a></p>
+            <p><a href="shopping.html">SHOPPINGBAG()</a></p>
+        </div>
+   </div>
+</body>
+
+</html>
+
+<script>
+    var cartls = JSON.parse(localStorage.getItem("mens-cart"))
+
+    display(cartls)
+
+    function display(data) {
+
+        data.forEach(function (elem,index) {
+
+            var box = document.createElement("div")
+
+            var image = document.createElement("img")
+            image.src = elem.imageurl
+
+            var brand = document.createElement("h3")
+            brand.innerText = elem.brand
+
+            var name = document.createElement("h4")
+            name.innerText = elem.name
+
+            var price = document.createElement("h3")
+            price.innerText = elem.price
+
+            var btn = document.createElement("button")
+            btn.innerText = "Remove";
+            btn.style.cursor="pointer"
+            btn.addEventListener("click", function () {
+                remove(elem,index)
+            })
+
+            box.append(image, brand, name, price, btn)
+
+            document.querySelector("#products").append(box)
+        })
+    }
+
+
+    function remove(elem,index) {
+        cartls.splice(index, 1);
+
+        localStorage.setItem("mens-cart", JSON.stringify(cartls))
+        window.location.reload()
+    }
+    
+</script>
