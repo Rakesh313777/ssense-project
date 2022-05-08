@@ -9,8 +9,7 @@ form.addEventListener("submit",function(event){
         password:form.password.value,
         enter:form.enter.value,
     }
-    localStorage.setItem("userData",JSON.stringify
-    (data));
-    window.location.href="login.html"
+    localStorage.setItem("signupdata",JSON.stringify(data));
+    window.location.href="./loginpage/login.html"
 })
 

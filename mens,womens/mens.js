@@ -843,7 +843,7 @@ function addtocart(elem) {
     localStorage.setItem("mens-cart", JSON.stringify(cartls))
 
     alert("product added successfully")
-    window.location.href = "cart.html"
+   
 }
 
 
