@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="pay.css">
+<body>
+    
+ 
+    
+        <h1>SSENSE</h1>
+        <p>CHECKOUT</p>
+        <P>SHIPPING ADDRESS</P>
+        <hr>
+
+
+
+        <form id="form">
+    <div class="container">
+
+    
+        <div id="left">
+
+
+        <p>First Name</p>
+        
+        <input id="name" type="text" />
+        
+       <p>street Address </p> 
+        <input id="address" type="text"/>
+        <p>City </p>
+        <input id="city" type="text"/>
+       <label>
+           <p>Country/Region</p>
+           <select id="country">
+          <option>Australia</option>
+          <option>NewZealand</option>
+          <option>South Africa</option>
+          <option>England</option>
+          <option>China</option>
+       </select>
+       </label>
+      <p>Phone</p> 
+       <input id="number" type="number"/>
+      
+        </div>
+
+
+
+        <div id="right">
+
+       <p>Last Name</p> 
+       <input id="lastName" type="text" >
+      <p>Company(optional)</p> 
+       <input id="company" type="text">
+       <p>Zip Or Postal Code </p> 
+       <input id="zip" type="text">
+      <label>
+          <p>State/Province</p>
+          <select id="state">
+         <option>Delhi</option>
+         <option>Mumbai</option>
+         <option>Punjab</option>
+         <option>Karnataka</option>
+         <option>Hyderabad</option>
+      </select>
+      </label>
+  
+
+    </div>
+    
+</div>
+
+
+
+
+<div id="ship">
+    <p>SHIPPING METHOD</p>
+    <hr>
+    <input id="shipping" type="radio">$0.00 USD|5-7 days |Express/>
+</div>
+
+<div id="pay">
+    <p>PAYMENT METHOD</p>
+    <hr>
+   <input id="debit" type="radio">pay with credit or debit card
+   <img src="https://cdn-icons-png.flaticon.com/128/349/349221.png"></img>
+   <img src="https://cdn-icons-png.flaticon.com/128/825/825464.png"/>
+   <br>
+   <input id="paypal" type="radio">pay with paypal
+   <img src="https://cdn-icons-png.flaticon.com/128/196/196566.png">
+  
+   <br>
+   <input id="alipay" type="radio">pay with Alipay
+   <img src="https://cdn1.iconfinder.com/data/icons/pinpoint-payment/48/alipay-128.png">
+
+   </div>
+
+
+
+    <p>CARD DETAILS</p>
+    <hr>
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div id="left1">
+   
+     <p>Card number</p>
+     <input id="card" type="number" placeholder="1234 1234 1234 1234">
+     <p>cardholder's Name</p>
+     <input id="holder" type="text">
+        </div>
+
+
+
+
+ <div id="right1">
+    
+      <p>Expiration date</p>
+      <input id="date" type="date" placeholder="MM/YY">
+     <p>Security code</p>
+      <input id="code" type="number"placeholder="CVC">
+
+ </div>
+
+ </div>
+  
+
+
+
+
+  <p>BILLING ADDRESS</p>
+  <hr>
+
+
+
+    
+   <input id="shipping" type="checkbox">Same as shipping address
+   
+
+
+<p>Please complete your shipping address</p>
+<hr>
+
+
+
+
+        
+    <h5>SENSE, 333 Chabanel W, #900, Montreal, QC, CA, H2N 2E7</h5>
+
+
+
+
+
+<div id="terms">
+    <a href="https://www.ssense.com/en-in/terms-conditions">Terms & Condition</a>
+    <a href="https://www.ssense.com/en-in/privacy-policy">Privacy Policy</a>
+    <input id="submit" type="submit" value="Place Order" />
+
+</div>
+
+
+</form>
+<div id="result"></div>
+
+</body>
+</html>
+
+
+
+
+
+<script >
+
+
+
+
+
+
+
+
+
+
+document.querySelector("#form").addEventListener("submit",payList);
+
+var payArr=[];
+
+
+function payList(){
+    event.preventDefault()
+
+
+
+   
+
+
+
+
+var payObj={
+    firstName:form.name.value,
+    address:form.address.value,
+    city:form.city.value,
+    country:form.country.value,
+    number:form.number.value,
+    lastName:form.lastName.value,
+    company:form.company.value,
+    zip:form.zip.value,
+    state:form.state.value,
+    shipping:form.shipping.value,
+    debit:form.debit.value,
+    paypal:form.paypal.value,
+    alipay:form.alipay.value,
+    card:form.card.value,
+    holder:form.holder.value,
+    date:form.date.value,
+    code:form.code.value,
+    billing:form.shipping.value,
+}
+
+if (payObj.firstName == "" ||payObj.address == ""||payObj.city == ""||payObj.country == ""||payObj.number == ""||payObj.lastName == ""||payObj.company== ""||payObj.zip == ""||payObj.state == ""||payObj.shipping == ""||payObj.debit == ""||payObj.paypal== ""||payObj.alipay== ""||payObj.card == ""||payObj.holder == ""||payObj.date == ""||payObj.code == ""||payObj.billing == "") {
+            alert("invalid data")
+        }
+
+
+        
+else{
+    alert("order sucessful")
+}
+
+
+
+payArr.push(payObj);
+console.log(payArr);
+
+localStorage.setItem("details",JSON.stringify(payArr));
+
+}
+
+
+
+
+
+
+
+
+
+
+
+var box=document.createElement("div");
+
+box.setAttribute("id","container");
+document.querySelector("body").append(box);
+
+
+var cartls = JSON.parse(localStorage.getItem("mens-cart"))
+
+    display(cartls)
+
+    function display(data) {
+
+        data.forEach(function (elem,index) {
+
+            var box = document.createElement("div")
+
+            var image = document.createElement("img")
+            image.src = elem.imageurl
+
+            var brand = document.createElement("h3")
+            brand.innerText = elem.brand
+
+            var name = document.createElement("h4")
+            name.innerText = elem.name
+
+            var price = document.createElement("h3")
+            price.innerText = elem.price
+
+            var btn = document.createElement("button")
+         
+            btn.style.cursor="pointer"
+            btn.addEventListener("click", function () {
+                remove(elem,index)
+            })
+
+            box.append(image, brand, name, price, btn)
+
+            document.querySelector("#container").append(box)
+        })
+    }
+    function remove(elem,index) {
+        cartls.splice(index, 1);
+
+        localStorage.setItem("mens-cart", JSON.stringify(cartls))
+      
+    }
+
+ 
+
+</script>
