@@ -1,24 +1,28 @@
-var signupdata= JSON.parse(localStorage.getItem("signupdata"))
-var form=documnet.querrySelector(".box")
-form.addEventListener("submit", myfunction)
-function myfunction(){
-    event.preventDefault()
+var form = document.querySelector("form")
+var userData=JSON.parse(localStorage.getItem
+("userData"))
 
-    var data={
-        emailname: box.emailname.value,
-        password:box.password.value,
-    }
-    if(signupdata == null){
-        alert ("Please create an account")
-    }
-    else if (signupdata.emailname==data.emailname && signupdata.password==data.password)
-    {
-        alert("login sucessfull")
-        localStorage.setItem("signupdata",JSON.stringify(signupdata))
-    }
-    else
-    {
-        alert("Wrong input")
-    }
-    
-}
+
+ form.addEventListener("submit",function(event){    
+
+   event.preventDefault()
+     var data = {
+       email:form.email.value,
+       password:form.password.value,
+   }
+
+   if(userData===null){
+       alert("create your account")
+   }
+   else if(userData.email == data.email && userData.password == data.password){
+       alert("login Successful")
+       localStorage.setItem("login",JSON.stringify
+      (userData))
+      window.location.href="index.html"
+   }
+   else{
+    alert("User does not exist")
+ }
+   
+
+ })
