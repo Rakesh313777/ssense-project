@@ -1,2 +1,2 @@
 # ssense-project
-Netlify Link-(https://remarkable-genie-bd3eb5.netlify.app/index.html)
+Netlify Link-(https://illustrious-tiramisu-a0c050.netlify.app/)
